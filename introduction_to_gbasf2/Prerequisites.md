@@ -3,6 +3,10 @@
 You can look at the official [gbasf2 documentation](https://gbasf2.belle2.org/prerequisites.html).
 Here we summarize the main points.
 
+```note
+Unfortunately, if you don’t have a grid certificate, you will only be able to observe today.
+```
+
 ## Grid certificate
 
 Make sure you have a valid grid certificate, issued within one year
