@@ -61,9 +61,10 @@ Check how to calculate the events per second at [setting-the-cpu-time](https://g
 evtpersec = nevents / (20 * <total time on KEKCC in seconds>)
 ```
 
-Where 20 is a normalization factor for KEKCC computing power (given by a standard CPU benchmark).
+Where 20 is a normalization factor for KEKCC computing power given by a standard CPU benchmark 
+(the Grid avoids raw "wall-clock" time because it is an unfair and inconsistent measure of work in a heterogeneous environment).
 
-Currently, for analysis jobs the default value is 100 events per second. Check if your steering file deviates significantly from this value 
+Check if your steering file deviates significantly from the default value 
 and provide a more accurate estimate.
 ````
 
@@ -143,6 +144,63 @@ This will become the default behavior in future versions of gbasf2.
 
 Can you monitor and confirm all is good with this new submission?
 
+## Dataset Collections 
+
+In Belle II, we exploit features of Rucio to manage datasets. 
+One of these features enable the concept of **dataset collections**.
+
+A dataset collection is a logical grouping of datasets. It encapsulates a very large number of files into a single LPN.
+
+Collections are intended to simplify the analysis workflow. 
+Instead of specifying many datasets as input, you can just specify a single collection.
+
+Usually, collections are defined by the Data Production team, intended for physics analysis. For example, for 
+MC16rd, you can find the collections at
+https://gitlab.desy.de/belle2/data-production/mc/-/wikis/MC16rd-Collections
+
+You can also find collections listing all of them + grep:
+```bash
+ gb2_ds_search collection --list_all_collections /belle/collection/MC/* | grep MC16rd_proc16
+```
+Data Production tries to keep names self-explanatory. 
+
+Now, try to submit a second project with dataset collection, like 
+```bash
+/belle/collection/MC/MC16rd_proc16_charged_Run1_4S_v2
+```
+
+How many jobs would be submitted? What additional information is shown?
 
 
+## Multiple input datasets
+
+When possible, you can reduce the number of submissions by setting multiple files per job. 
+
+This is done with the option `-n N`, where `N` is the number of input files per job.
+
+For example, to submit the same project as before but with 5 files per job, you can do
+
+```bash
+gbasf2 steering_file_complete.py \
+       -p myfirstProject_n5 \
+       -s light-2511-gacrux \
+       -n 5 \ 
+       -f variable_aliases.py \
+       -i /belle/collection/MC/MC16rd_proc16_charged_Run1_4S_v2
+ ```
+
+Does it work? If not, why not? 
+
+```{warning}
+Not all datasets can be arranged in multiple files per job. The Data Production team usually declares those problematic cases.
+
+We are implementing a feature to overcome such limitations in future versions of gbasf2.
+```
+
+```{warning}
+In a real analysis, you should always use analysis skims! Skims are preselected datasets that reduce the amount of 
+data to be processed, speeding up the processing from **weeks to days**.
+
+Ask you physics WG conveners about the recommended skims for your analysis.
+```
 

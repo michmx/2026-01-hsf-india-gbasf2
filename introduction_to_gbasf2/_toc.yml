@@ -7,4 +7,5 @@ chapters:
 - file: Prerequisites
 - file: Setup
 - file: SubmitJobs
-
+- file: DataManagement
+- file: DiagnosticTools
