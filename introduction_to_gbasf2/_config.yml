@@ -8,7 +8,7 @@
 title                       : Introduction to Gbasf2  # The title of the book. Will be placed in the left navbar.
 author                      : Belle II Collaboration  # The author of the book
 copyright                   : "2026"  # Copyright year to be placed in the footer
-logo                        : logo.png  # A path to the book logo
+logo                        : BelleIILogo.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

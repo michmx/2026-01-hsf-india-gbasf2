@@ -1,11 +1,9 @@
-# Welcome to your Jupyter Book
+# Introduction to GBasf2 
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This is a quick introduction to GBasf2, the software framework used in the Belle II experiment 
+for analysis on the grid.
 
-Check out the content pages bundled with this sample book to see more.
+This tutorial is a condensed version of the GBasf2 introduction presented at the [Belle II Online Book](https://software.belle2.org/development/sphinx/online_book/index-01-online_book.html).
 
 ```{tableofcontents}
 ```
