@@ -16,6 +16,8 @@ Remember to always test your jobs locally before submitting to the grid!
 
 Gbasf2 is conveniently deployed via CVMFS. 
 
+Unfortunately, **basf2 and gbasf2 environments are NOT compatible**. We will run gbasf2 in a new shell.
+
 Every time you open a new terminal, you need to set up the environment by running the following command:
 
 ```bash

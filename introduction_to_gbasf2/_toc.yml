@@ -6,4 +6,5 @@ root: intro
 chapters:
 - file: Prerequisites
 - file: Setup
+- file: SubmitJobs
 

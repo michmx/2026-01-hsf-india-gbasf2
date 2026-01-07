@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : Introduction to Gbasf2  # The title of the book. Will be placed in the left navbar.
-author                      : Belle II Collaboration  # The author of the book
+author                      : Michel Villanueva & the Belle II Collaboration  # The author of the book
 copyright                   : "2026"  # Copyright year to be placed in the footer
 logo                        : BelleIILogo.png  # A path to the book logo
 
