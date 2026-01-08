@@ -1,6 +1,6 @@
 # Setting up gbasf2 
 
-```{warning}
+```{important}
 Before getting started, make sure you understand the following:
 
 * The GRID is NOT a local computing system like KEKCC.

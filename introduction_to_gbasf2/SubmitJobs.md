@@ -5,7 +5,7 @@ grid and monitor them.
 
 ## A simple job submission
 
-```{warning}
+```{important}
 Remember the first rule of gbasf2: test your script before submitting!
 ```
 
@@ -32,11 +32,37 @@ You may immediately notice a `sub00`. This in the Belle II grid jargon is a **da
 together for easier data management. Datasets can contain one or more datablocks, but this should be transparent to 
 users (you don't need to explicitly add them).
 
+`````{admonition} Options available  
+:class: tip
+For every single gb2 tool, you can check which are the options available with 
+
+```bash
+gb2_ds_list --help
+```
+
+and even some examples with 
+
+```bash
+gb2_ds_list --usage 
+```
+`````
+
+
 Look inside the datablock. 
 ```bash
 gb2_ds_list /belle/group/physics/Charmonium/belle_starterkit/BptoKpX3872_MC16ri/sub00
 ```
 How many files did you find?
+
+```{important}
+Files on grid have metadata associated, like status, number of events, file size, checksum, etc.
+
+By default, gb2 tools only show information about the files with status 'good'. Such status means the file 
+was properly recorded.
+
+You can overwrite this behavior with the option `-s all` (only if you have a good reason to do so!).
+```
+
 
 Now we are ready to submit your first project. Use the command 
 
@@ -197,7 +223,7 @@ Not all datasets can be arranged in multiple files per job. The Data Production 
 We are implementing a feature to overcome such limitations in future versions of gbasf2.
 ```
 
-```{warning}
+```{important}
 In a real analysis, you should always use analysis skims! Skims are preselected datasets that reduce the amount of 
 data to be processed, speeding up the processing from **weeks to days**.
 
