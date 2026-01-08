@@ -7,3 +7,5 @@ This tutorial is a condensed version of the GBasf2 introduction presented at the
 
 ```{tableofcontents}
 ```
+
+![the grid](images/da-grid.png)
