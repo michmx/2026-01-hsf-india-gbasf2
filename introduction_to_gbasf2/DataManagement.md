@@ -46,8 +46,6 @@ working group has a dedicated space like `/belle/group/physics/Charmonium/`.
 Discuss with your WG conveners and DP liasion to get access to the group space.
 ```
 
-```bash
-
 
 ## Replicating datasets 
 
